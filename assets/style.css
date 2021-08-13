@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --veryDarkGray: hsl(0, 0%, 17%);
+    --darkGray: hsl(0, 0%, 59%);
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 295px;
+    background: url('../images/pattern-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1.5rem;
+}
+
+.title span{
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+}
+
+.title{
+    margin: 5px 0 25px;
+}
+
+.search-div{
+    min-width: 327px;
+}
+
+.search-box{
+    display: flex;
+}
+
+.search-input{
+    border: none;
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    padding: .9rem 1.2rem;
+    min-width: 271px;
+    border-radius: .8rem 0 0 .8rem;
+}
+
+.search-btn{
+    font-size: 1rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    outline: none;
+    background-color: #000;
+    padding: .9rem 1.5rem;
+    min-width: 58px;
+    border-radius: 0 .8rem .8rem 0;
+}
+
+.search-btn:hover{
+    background-color: var(--veryDarkGray);
+}
+
+
+.info-card{
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+    background: #fff;
+    min-width: 327px;
+    border-radius: .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: .9rem 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.info-content{
+    margin: 10px 0;
+}
+
+.info-title{
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: var(--darkGray);
+    font-size: .6rem;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.info{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: .5rem;
+}
+
+#map{
+    width: 100%;
+    height: 68.6vh;
+}
+
+
+
+@media (min-width: 1110px){
+    .search-div{
+        width: 560px;
+    }
+    .search-input{
+        width: 470px;
+    }
+    
+    .search-btn{
+        font-size: 1.5rem;
+        width: 90px;
+    }
+
+    .info-card{
+        max-width: 920px;
+        padding: 2.8rem 1.3rem;
+        flex-direction: row;
+        align-items: flex-start;
+    } 
+
+    .info-content{
+        margin: 0 14px;
+        padding-right: 10px;
+        height: 71px;
+    }
+
+    .info-title{
+        text-align: left;
+        font-size: 0.8rem;
+    }
+    
+    .info{
+        font-size: 1.3rem;
+    }
+
+    .isp-card,
+    .location-card,
+    .timezone-card{
+        border-left: 1px solid var(--darkGray);
+        padding-left: 20px;
+    }
+    
+    .timezone-card{
+        min-width: 153px;
+    }
+}
