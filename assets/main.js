@@ -1,4 +1,6 @@
 const btnEnvia = document.querySelector('.search-btn');
+const btnModal = document.querySelector('.modal-container button');
+const divModal = document.querySelector('.modal-opened');
 const input = document.querySelector('.search-input');
 
 /* Infos do card */
@@ -38,7 +40,7 @@ function criaMapa(lat,lng){
 
 
 async function puxaApi(value){
-    const recebe = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_KRrj2TebTAlSw0Lw0STuy6R7t82O8&ipAddress=${value}`);
+    const recebe = await fetch(`https://geo.ipify.org/api/v1?apiKey=at_DJ3uDlzhCMB2ZeiW0nxrGIS1Z40zR&ipAddress=${value}`);
     const recebeJson = await recebe.json();
     return recebeJson;
 }
@@ -69,6 +71,26 @@ input.addEventListener('keypress', (e)=>{
             handleFunctions(input.value);
         }
     };
+})
+
+// Modal
+
+const removeModal = () => {
+    divModal.remove()
+}
+
+btnModal.addEventListener('click', removeModal)
+
+window.addEventListener('keydown', (e) => {
+    if(e.key == "Escape" && e.code == "Escape"){
+        removeModal()
+    }
+})
+
+window.addEventListener('click', e => {
+    if(e.target.className == "modal-opened"){
+        removeModal()
+    }
 })
 
 

@@ -15,6 +15,7 @@
 body{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .container{
@@ -130,6 +131,70 @@ header{
     height: 68.6vh;
 }
 
+.not-exist{
+    opacity: 0;
+    display: none;
+    transition: all .2s ease-in;
+}
+
+.modal-opened{
+    z-index: 9999;
+    width: 101%;
+    position: absolute;
+    height: 107vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.modal-container{
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 320px;
+    max-width: 500px;
+    width: 84.5%;
+    padding: 2rem 1rem;
+    background-color: #fff;
+    border-radius: 16px;
+    gap: 2rem;
+}
+
+.modal-container span,
+.modal-container h1{
+    text-align: center;
+}
+
+.modal-container span{
+    font-size: 1.5rem;
+}
+
+.modal-container button {
+    font-size: 1.3rem;
+    min-width: 130px;
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid #d90429;
+    background: #d90429;
+  }
+  .modal-container button:hover {
+    background: #fff;
+    color: #d90429
+  }
 
 
 @media (min-width: 1110px){
